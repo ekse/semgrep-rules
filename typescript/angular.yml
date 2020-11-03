@@ -1,0 +1,16 @@
+rules:
+- id: angular_bypass_security
+  patterns:
+  - pattern-either:
+    - pattern: $X.bypassSecurityTrustHtml(...)
+    - pattern: $X.bypassSecurityTrustStyle(...)
+    - pattern: $X.bypassSecurityTrustScript(...)
+    - pattern: $X.bypassSecurityTrustUrl(...)
+    - pattern: $X.bypassSecurityTrustResourceUrl(...)
+  message: >-
+    This method bypasses the built-in sanitization
+  languages:
+  - typescript
+  severity: WARNING
+  metadata:
+    documentation: "https://angular.io/api/platform-browser/DomSanitizer"
