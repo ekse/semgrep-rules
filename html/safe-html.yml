@@ -1,0 +1,16 @@
+rules:
+- id: safe-html
+  metadata:
+    category: security
+    technology:
+    - html
+  patterns:
+  - pattern: |
+      <... safeHtml ... >
+  paths:
+    include:
+    - '*.html'
+  message: >-
+    xxx
+  severity: WARNING
+  languages: [generic]
